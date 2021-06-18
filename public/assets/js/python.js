@@ -10,28 +10,11 @@ const options = {
 
 function hello() {
   let endpoint = base_url + "hello/" + inputName.value
+
   axios.get(endpoint)
     .then(function (res) {
       dataResult.innerHTML = res['data']
-    })
-}
-
-function readFile() {
-  let endpoint = base_url + "read-file/"
-  let req_data = {
-    path: inputFile.value
-  }
-  console.log(req_data)
-  axios.post(endpoint, req_data, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    .then((res) => {
-      dataResult.innerHTML = res['data']
-    })
-    .catch((err) => {
-      console.log("ERR:: ", err.response.data)
+      apiResult.innerHTML = JSON.stringify(res, null, 4)
     })
 
 }
@@ -46,8 +29,9 @@ function open_explorer() {
   axios.post(endpoint, req_data, options)
     .then((res) => {
       dataResult.innerHTML = res['data']
+      apiResult.innerHTML = JSON.stringify(res, null, 4)
     })
     .catch((err) => {
-      console.log("ERR:: ", err.response.data)
+      apiResult.innerHTML = JSON.stringify(err, null, 4)
     })
 }

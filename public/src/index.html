@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <title>Hello World!</title>
+  <title>Python FAST API x Electron JS</title>
 
 
   <script src="https://unpkg.com/@tabler/core@1.0.0-beta3/dist/js/tabler.min.js"></script>
@@ -14,16 +14,103 @@
 </head>
 
 <body class="antialiased">
-
   <div class="wrapper">
-    <input id="inputName">
-    <button onclick="hello()" id="btnName" class="btn">Submit</button>
-    <br />
-    <input id="inputPath">
-    <button onclick="open_explorer()" id="btnPath" class="btn">Submit</button>
-    <div id="dataResult"></div>
-  </div>
+    <div class="page-wrapper">
+      <div class="container-xl">
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <strong> Python FAST API<span class="text-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="24"
+                      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M19.5 13.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+                    </svg>
+                  </span> Electron JS </strong>
+                <hr />
+              </div>
+            </div>
+            <div class="row row-cards">
+              <div class="col-md-2"></div>
+              <div class="col-md-4">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Type your Name</h3>
+                      <input id="inputName" type="text" class="form-control mt-4" value="World">
+                      <div class="mt-4">
+                        <button onclick="hello()" id="btnName" class="btn btn-primary w-100">Submit</button>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm card-progress ">
+                      <div class="progress-bar bg-purple" style="width: 38%" role="progressbar" aria-valuenow="38"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="visually-hidden">38% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Open Path to Explorer</h3>
+                      <input id="inputPath" type="text" class="form-control mt-4" value="D:">
+                      <div class="mt-4">
+                        <button onclick="open_explorer()" id="btnPath" class="btn btn-primary w-100">Submit</button>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm card-progress">
+                      <div class="progress-bar bg-orange" style="width: 38%" role="progressbar" aria-valuenow="38"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <span class="visually-hidden">38% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row row-cards mt-2">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="col-md-12">
+
+                  <div class="card">
+                    <div class="card-status-top bg-success"></div>
+                    <div class="card-body">
+                      <h3 class="card-title">Log From Python.js</h3>
+                      <span id="dataResult">
+
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-4">
+
+                  <div class="card">
+                    <div class="card-status-top bg-success"></div>
+                    <div class="card-body">
+                      <h3 class="card-title">API Response from FASTAPI</h3>
+                      <pre id="apiResult">
+
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   <script src="../assets/js/python.js"></script>
 </body>
 

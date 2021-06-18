@@ -5,10 +5,10 @@
   "main": "public/assets/js/main.js",
   "scripts": {
     "py-install": "pip install -r requirements.txt",
-    "py-release": "auto-py-to-exe -c spec.json -o engine/dist engine/api.py",
-    "py-release-console": "auto-py-to-exe -c spec_console.json -o engine/dist engine/api.py",
+    "py-build": "auto-py-to-exe -c spec.json -o engine/dist engine/api.py",
+    "py-build-console": "auto-py-to-exe -c spec_console.json -o engine/dist engine/api.py",
     "electron-dev": "electron .",
-    "electron-release": "electron-builder --config electron-builder.config.json"
+    "electron-build": "electron-builder --config electron-builder.config.json"
   },
   "repository": {
     "type": "git",

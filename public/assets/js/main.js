@@ -11,7 +11,6 @@ const execFile = require("child_process").execFile
 const API_PROD_PATH = path.join(process.resourcesPath, "../lib/api/api.exe")
 const API_DEV_PATH = path.join(__dirname, "../../../engine/api.py")
 const INDEX_PATH = path.join(__dirname, '../../src/index.html')
-
 const app_instance = app.requestSingleInstanceLock()
 
 
@@ -85,8 +84,14 @@ app.whenReady().then(() => {
 
 // kill all child process before-quit
 app.on("before-quit", function () {
+
+  //kill api.exe Process
   execFile().kill("SIGINT")
-  PythonShell.kill(API_DEV_PATH)
+  if (isDev) {
+    PythonShell.kill(API_DEV_PATH)
+  } else {
+    execFile().kill("SIGINT")
+  }
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
