@@ -2,6 +2,9 @@ from fastapi import FastAPI
 import api_model
 import os
 
+HOST = "127.0.0.1"
+PORT = 7777
+
 app = FastAPI()
 
 @app.get("/hello/{name}")
@@ -22,4 +25,4 @@ if __name__ == "__main__":
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
 
-    loop.run_until_complete(uvicorn.run(app, host="127.0.0.1", port=7777))
+    loop.run_until_complete(uvicorn.run(app, host=HOST, port=PORT))

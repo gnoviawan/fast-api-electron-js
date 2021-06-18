@@ -9,6 +9,3 @@ class PathModel(BaseModel):
 class HelloModel(BaseModel):
     name: str
     message: Optional[str]
-
-class ReadModel(BaseModel):
-    path: str
