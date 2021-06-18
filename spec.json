@@ -1,0 +1,129 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "F:\\Project\\development\\frontend\\python-electron-boilerplate\\engine\\api.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.logging"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.lifespan.off"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.lifespan.on"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.lifespan"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.websockets.auto"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.websockets.wsproto_impl"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.websockets_impl"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.http.auto"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.http.h11_impl"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.http.httptools_impl"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.websockets"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols.http"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.protocols"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.loops.auto"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.loops.asyncio"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.loops.uvloop"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "uvicorn.loops"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
