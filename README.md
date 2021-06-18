@@ -4,7 +4,7 @@
 > Modern web UI x Python FAST API
 
 ## preview
-![Fast API Electron JS Preview](https://raw.githubusercontent.com/gnoviawan/fast-api-electron-js/main/public/assets/media/logo/app_screenshots.png)
+![Fast API Electron JS Preview](https://raw.githubusercontent.com/gnoviawan/fast-api-electron-js/main/public/assets/media/logo/python-electronjs.gif)
 
 ## Installing / Getting started
 
