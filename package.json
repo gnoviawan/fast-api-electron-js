@@ -1,5 +1,5 @@
 {
-  "name": "python-electron-boilerplate",
+  "name": "fast-api-electron-jse",
   "version": "0.1.0",
   "description": "A boilerplate for ElectronJS frontend and Python Backend",
   "main": "public/assets/js/main.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gnoviawan/python-electron-boilerplate.git"
+    "url": "git+https://github.com/gnoviawan/fast-api-electron-js.git"
   },
   "author": "Ginanjar Noviawan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gnoviawan/python-electron-boilerplate/issues"
+    "url": "https://github.com/gnoviawan/fast-api-electron-js/issues"
   },
-  "homepage": "https://github.com/gnoviawan/python-electron-boilerplate#readme",
+  "homepage": "https://github.com/gnoviawan/fast-api-electron-js#readme",
   "devDependencies": {
     "axios": "^0.21.1",
     "electron": "^13.1.2",
