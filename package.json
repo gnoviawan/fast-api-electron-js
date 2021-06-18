@@ -2,13 +2,13 @@
   "name": "python-electron-boilerplate",
   "version": "0.1.0",
   "description": "A boilerplate for ElectronJS frontend and Python Backend",
-  "main": "public/src/main.js",
+  "main": "public/assets/js/main.js",
   "scripts": {
     "py-install": "pip install -r requirements.txt",
     "py-release": "auto-py-to-exe -c spec.json -o engine/dist engine/api.py",
     "py-release-console": "auto-py-to-exe -c spec_console.json -o engine/dist engine/api.py",
-    "dev": "electron .",
-    "release": "electron-builder --config electron-builder.config.json"
+    "electron-dev": "electron .",
+    "electron-release": "electron-builder --config electron-builder.config.json"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "electron-debug": "^3.2.0"
+    "electron-is-dev": "^1.2.0"
   }
 }

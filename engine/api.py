@@ -1,16 +1,19 @@
 from fastapi import FastAPI
+import api_model
 import os
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"Helo": "World!"}
+@app.get("/hello/{name}")
+def read_root(name: str):
+    return f"hello {name}"
 
-@app.get("/open-explorer/{path_to_open}")
-def open_explorer(path_to_open: str):
-    os.startfile(path_to_open)
-    return f"Opening {path_to_open}"
+@app.post("/open-explorer/")
+def open_explorer(model: api_model.PathModel):
+    
+    os.startfile(model.path)
+
+    return f"Opening {model.path}"
 
 if __name__ == "__main__":
     import asyncio

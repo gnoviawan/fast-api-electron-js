@@ -5,41 +5,35 @@ const {
 
 const path = require('path')
 const fs = require("fs")
-
+const isDev = require("electron-is-dev")
 const execFile = require("child_process").execFile
 
-const API_PROD_PATH = path.join(process.resourcesPath, "..", "lib", "api", "api.exe")
-const API_DEV_PATH = path.join(__dirname, "..", "..", "engine", "api.py")
+const API_PROD_PATH = path.join(process.resourcesPath, "../lib/api/api.exe")
+const API_DEV_PATH = path.join(__dirname, "../../../engine/api.py")
+const INDEX_PATH = path.join(__dirname, '../../src/index.html')
 
 const app_instance = app.requestSingleInstanceLock()
-
-// electron auto reloader
-try {
-  require('electron-reloader')(module)
-} catch (_) {}
 
 
 // check if current app is Production or Development by checking `lib` folder
 // if there is lib folder, let's run the api from API_PROD_PATH, else run it from .py file
-try {
-  if (fs.existsSync(API_PROD_PATH)) {
-    execFile(API_PROD_PATH, {
-      windowsHide: true,
-    })
-  } else {
+if (isDev) {
+  try {
+    require('electron-reloader')(module)
+  } catch (_) {}
 
-    const {
-      PythonShell
-    } = require('python-shell')
+  const {
+    PythonShell
+  } = require('python-shell')
 
-    PythonShell.run(API_DEV_PATH, function (err, results) {
-      if (err) console.log(err)
-    })
-  }
-} catch (err) {
-  console.error(err)
+  PythonShell.run(API_DEV_PATH, function (err, results) {
+    if (err) console.log(err)
+  })
+} else {
+  execFile(API_PROD_PATH, {
+    windowsHide: true,
+  })
 }
-
 
 //create Main Window
 function createWindow() {
@@ -55,12 +49,13 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  const index_page = path.join(__dirname, 'index.html')
-  mainWindow.loadFile(index_page)
+  mainWindow.loadFile(INDEX_PATH)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
-  mainWindow.webContents.openDevTools()
+
+  if (isDev) mainWindow.webContents.openDevTools()
+
 
   // only one instance exists
   // change to focus if window is minimized
