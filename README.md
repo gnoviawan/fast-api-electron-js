@@ -56,7 +56,7 @@ npm install
 
 ## Developing
 
-##### Directory Structure :
+#### Directory Structure :
 
 `engine/` : a python directory for Fast API, create/modify all python module there, keep the `api.py` file name if you want to easily building the app later.
 
@@ -66,7 +66,7 @@ npm install
 
 `public/assets/js/main.js`: electron main window
 
-##### Preview your Application :
+#### Preview your Application :
 
 run this command to preview your app
 
@@ -78,7 +78,7 @@ npm run electron-dev
 
 ## Deploying / Publishing
 
-##### Building Python :
+#### Building Python :
 
 before we building our app we have to build our Python FastAPI to .exe file ( windows ) or other executable format for each OS using PyInstaller and then call our Python Fast api as a child process inside electron js.
 
@@ -95,7 +95,7 @@ also if you are not using Windows change this code inside `public/assets/js/main
 ```javascript
 const  API_PROD_PATH = path.join(process.resourcesPath, "../lib/api/api.exe")
 ```
-##### Build the application :
+#### Build the application :
 
 after we build our fast API it's time to build our main APP, run this command to build it
 
@@ -110,21 +110,21 @@ if you want to change the build options modify this config file `electron-builde
 
 ## All Related Links for this project
 
-###### Server / Backend API ( Python )
+#### Server / Backend API ( Python )
 
 [Python Fast API](https://fastapi.tiangolo.com/) = main module that create our API application
 [uvicorn](https://www.uvicorn.org/) = Main module that create local server
 
-###### Middleware (Javascript)
+#### Middleware (Javascript)
 
 [Axios JS](https://axios-http.com/docs/intro) = module to communicate beetwen Python and Frontend
 
-###### Frontend ( HTML, CSS, Javascript )
+#### Frontend ( HTML, CSS, Javascript )
 
 [Electron JS](https://www.electronjs.org/) = main module that create standalone application
 [Tabler](https://tabler.io/) = Front end UI Kit / Framework
 
-###### Utility
+#### Utility
 
 [Electron Builder](electron.build/) = module to package our Electron APP
 [Electron Reloader](https://www.npmjs.com/package/electron-reloader) = to automatic reload our Electron APP when in development stage
