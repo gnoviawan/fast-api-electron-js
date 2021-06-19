@@ -113,6 +113,7 @@ if you want to change the build options modify this config file `electron-builde
 #### Server / Backend API ( Python )
 
 [Python Fast API](https://fastapi.tiangolo.com/) = main module that create our API application
+
 [uvicorn](https://www.uvicorn.org/) = Main module that create local server
 
 #### Middleware (Javascript)
@@ -122,12 +123,15 @@ if you want to change the build options modify this config file `electron-builde
 #### Frontend ( HTML, CSS, Javascript )
 
 [Electron JS](https://www.electronjs.org/) = main module that create standalone application
+
 [Tabler](https://tabler.io/) = Front end UI Kit / Framework
 
 #### Utility
 
 [Electron Builder](electron.build/) = module to package our Electron APP
+
 [Electron Reloader](https://www.npmjs.com/package/electron-reloader) = to automatic reload our Electron APP when in development stage
+
 [Python Shell](https://github.com/extrabacon/python-shell) = to create Python shell inside Node.js Application
 
 
