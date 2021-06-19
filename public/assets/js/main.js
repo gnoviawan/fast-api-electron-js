@@ -14,8 +14,8 @@ const INDEX_PATH = path.join(__dirname, '../../src/index.html')
 const app_instance = app.requestSingleInstanceLock()
 
 
-// check if current app is Production or Development by checking `lib` folder
-// if there is lib folder, let's run the api from API_PROD_PATH, else run it from .py file
+// check if current app is Production or Development using electron-is-dev library
+// current app is not production, just run the API from api.py,else run the api from API_PROD_PATH
 if (isDev) {
   try {
     require('electron-reloader')(module)
@@ -51,8 +51,6 @@ function createWindow() {
   mainWindow.loadFile(INDEX_PATH)
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
-
   if (isDev) mainWindow.webContents.openDevTools()
 
 
@@ -85,8 +83,6 @@ app.whenReady().then(() => {
 // kill all child process before-quit
 app.on("before-quit", function () {
 
-  //kill api.exe Process
-  execFile().kill("SIGINT")
   if (isDev) {
     PythonShell.kill(API_DEV_PATH)
   } else {

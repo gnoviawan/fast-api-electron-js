@@ -6,10 +6,6 @@
    "value": true
   },
   {
-   "optionDest": "filenames",
-   "value": "F:\\Project\\development\\frontend\\python-electron-boilerplate\\engine\\api.py"
-  },
-  {
    "optionDest": "onefile",
    "value": false
   },
