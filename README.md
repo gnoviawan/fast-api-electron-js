@@ -128,7 +128,7 @@ if you want to change the build options modify this config file `electron-builde
 
 #### Utility
 
-[Electron Builder](electron.build/) = packate to build our Electron APP
+[Electron Builder](https://www.electron.build/) = packate to build our Electron APP
 
 [Electron Reloader](https://www.npmjs.com/package/electron-reloader) = to automatic reload our Electron APP when in development stage
 
