@@ -5,8 +5,7 @@
   "main": "public/assets/js/main.js",
   "scripts": {
     "py-install": "pip install -r requirements.txt",
-    "py-build": "auto-py-to-exe -c spec.json -o engine/dist engine/api.py",
-    "py-build-console": "auto-py-to-exe -c spec_console.json -o engine/dist engine/api.py",
+    "py-build": "pyinstaller --workpath=engine/build --distpath=engine/dist api.spec",
     "electron-dev": "electron .",
     "electron-build": "electron-builder --config electron-builder.config.json"
   },
