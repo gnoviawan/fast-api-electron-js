@@ -1,10 +1,26 @@
-![Electron JS Python Fast API](https://raw.githubusercontent.com/gnoviawan/fast-api-electron-js/main/public/assets/media/logo/electron-fastapi.png?token=ARKGJ22WCRI52GIWXEUV44TAZRIME)
+![Electron JS Python Fast API](https://raw.githubusercontent.com/gnoviawan/fast-api-electron-js/main/public/assets/media/logo/electron-fastapi.png)
 
 # Electron JS x Python Fast API
 > Modern web UI x Python FAST API
 
-## preview
+## Preview
 ![Fast API Electron JS Preview](https://raw.githubusercontent.com/gnoviawan/fast-api-electron-js/main/public/assets/media/logo/python-electronjs.gif)
+
+
+
+## Prerequisite
+
+- Working Python environment (virtual environment is recommended), Python 3
+- Know how to use Node.js command
+
+
+
+## Features
+
+ 1. Python Backend - do as you wish with python, do AI / ML / etc and send those data to modern web UI
+ 2. Cross Platform APP using web UI
+
+
 
 ## Installing / Getting started
 
@@ -14,109 +30,107 @@ clone this git
 git clone https://github.com/gnoviawan/fast-api-electron-js.git
 ```
 
-### Initial Configuration
+
+
+## Initial Configuration
+
 change directory to cloned git
 
-    cd fast-api-electron-js
+```shell
+cd fast-api-electron-js
+```
 
 install all python dependencies
 
-    npm run py-install
+```shell
+npm run py-install
+```
 
 install all node js dependencies
 
-    npm install
+```shell
+npm install
+```
+
+
 
 ## Developing
 
-Fast API Direcotry Path `engine/` , you can create/modify all python module/api there
+##### Directory Structure :
 
-Electron JS ( Frontend ) Path `public/`, all frontend related files are in this folder
+`engine/` : a python directory for Fast API, create/modify all python module there, keep the `api.py` file name if you want to easily building the app later.
 
-`public/assets/js/public.js` is responsible to communicate between our frontend and backend.
+`public/`: all frontend related files
+
+`public/assets/js/python.js`: is responsible to communicate between our frontend and backend.
+
+`public/assets/js/main.js`: electron main window
+
+##### Preview your Application :
 
 run this command to preview your app
 
-    npm run electron-dev
+```shell
+npm run electron-dev
+```
 
-### Building
 
-before we building our app we have to build our Python FastAPI to .exe file ( windows ) or other executable format for each OS using PyInstaller and then call our Python Fast api as child process inside electron js.
 
-run this command to build python and open `auto-py-to-exe` GUI
+## Deploying / Publishing
 
-    npm run py-build
+##### Building Python :
 
-after `auto-py-to-exe` open, click `Convert .PY to .EXE`
+before we building our app we have to build our Python FastAPI to .exe file ( windows ) or other executable format for each OS using PyInstaller and then call our Python Fast api as a child process inside electron js.
 
-if you are not in Windows change this code inside `public/assets/js/main.js`
+run this command to build python using `PyInstaller` library
 
-    const  API_PROD_PATH = path.join(process.resourcesPath, "../lib/api/api.exe")
-to another OS executable format ( not tested, and will update `auto-py-to-exe` to `PyInstaller` later
+please adjust the `api.spec` if you want to modify the build process or icon, please refer to the [PyInstaller documentation](https://pyinstaller.readthedocs.io/en/stable/spec-files.html)
 
-### Deploying / Publishing
+```shell
+npm run py-build
+```
 
-after you build your fast API it's time to build our main APP, run this command to build it
+also if you are not using Windows change this code inside `public/assets/js/main.js` to another OS executable format ( not tested )
 
-    npm run electron-build
+```javascript
+const  API_PROD_PATH = path.join(process.resourcesPath, "../lib/api/api.exe")
+```
+##### Build the application :
 
-our app are published on this path `dist`
+after we build our fast API it's time to build our main APP, run this command to build it
+
+```shell
+npm run electron-build
+```
+
+our app are published to this path `dist`
 if you want to change the build options modify this config file `electron-builder.config.json` more about the options please check [electron-builder](https://www.electron.build/) documentation
-## Features
-
- 1. Python Backend - do as you wish with python, do AI / ML / etc and send those data to modern web UI
- 2. Cross Platform APP using web UI
- 
-
-## Configuration
-
-
-
-
-
-## Contributing
 
 
 
 ## All Related Links for this project
 
-Server / Backend API ( Python )
+###### Server / Backend API ( Python )
+
 [Python Fast API](https://fastapi.tiangolo.com/) = main module that create our API application
 [uvicorn](https://www.uvicorn.org/) = Main module that create local server
 
-Middleware (Javascript)
+###### Middleware (Javascript)
+
 [Axios JS](https://axios-http.com/docs/intro) = module to communicate beetwen Python and Frontend
 
-Frontend ( HTML, CSS, Javascript )
+###### Frontend ( HTML, CSS, Javascript )
+
 [Electron JS](https://www.electronjs.org/) = main module that create standalone application
 [Tabler](https://tabler.io/) = Front end UI Kit / Framework
 
-Utility
+###### Utility
+
 [Electron Builder](electron.build/) = module to package our Electron APP
 [Electron Reloader](https://www.npmjs.com/package/electron-reloader) = to automatic reload our Electron APP when in development stage
 [Python Shell](https://github.com/extrabacon/python-shell) = to create Python shell inside Node.js Application
 
-## Licensing
 
 
-MIT License
+## [Licensing](https://github.com/gnoviawan/fast-api-electron-js/blob/main/LICENSE.md)
 
-Copyright (c) 2021 Ginanjar Noviawan
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
